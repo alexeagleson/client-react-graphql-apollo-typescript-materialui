@@ -4,8 +4,8 @@ import PostViewer from './components/PostViewer';
 import PostEditor from './components/PostEditor';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import './App.css';
-const logo = require('./assets/logo.svg');
+import './assets/styles/main.css';
+const logo = require('./assets/images/logo.svg');
 
 class App extends Component {
   public state = {
@@ -18,7 +18,7 @@ class App extends Component {
 
     if (viewMode === 1) {
       return (
-        <React.Fragment>
+        <Grid container>
           <Grid item xs={12}>
             <Button
               variant="contained"
@@ -31,14 +31,11 @@ class App extends Component {
           <Grid item xs={8}>
             <Dashboard />
           </Grid>
-        </React.Fragment>
+        </Grid>
       );
     } else {
       return (
-        <React.Fragment>
-          <Grid item xs={12}>
-            <img src={logo} className="App-logo" alt="logo" />
-          </Grid>
+        <Grid container direction="column" justify="center" alignItems="center">
           <Grid item xs={12}>
             <Button
               variant="contained"
@@ -48,6 +45,11 @@ class App extends Component {
               Back to the Dashboard!
             </Button>
           </Grid>
+
+          <Grid item xs={12}>
+            <img src={logo} className="App-logo" alt="logo" />
+          </Grid>
+
           <Grid item xs={12}>
             <Button
               variant="contained"
@@ -56,6 +58,12 @@ class App extends Component {
             >
               New Post
             </Button>
+          </Grid>
+          <Grid item xs={12}>
+            <h3>(or click to edit an existing entry)</h3>
+          </Grid>
+
+          <Grid item xs={12}>
             <PostViewer
               canEdit={() => true}
               onEdit={(post: any) => this.setState({ editing: post })}
@@ -67,7 +75,7 @@ class App extends Component {
               />
             )}
           </Grid>
-        </React.Fragment>
+        </Grid>
       );
     }
   }

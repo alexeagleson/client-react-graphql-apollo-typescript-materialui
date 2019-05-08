@@ -1,6 +1,11 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 
 export const GET_POSTS = gql`
   query GetPosts {
@@ -20,26 +25,26 @@ const rowStyles = (post: any, canEdit: any) => {
 const PostViewer = ({ canEdit, onEdit }: any) => (
   <Query query={GET_POSTS}>
     {({ loading, data }: any) => !loading && (
-      <table>
-        <thead>
-          <tr>
-            <th>Author</th>
-            <th>Body</th>
-          </tr>
-        </thead>
-        <tbody>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>Author</TableCell>
+            <TableCell>Body</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
           {data.posts.map((post: any) => (
-            <tr
+            <TableRow
               key={post.id}
               style={rowStyles(post, canEdit)}
               onClick={() => canEdit(post) && onEdit(post)}
             >
-              <td>{post.author}</td>
-              <td>{post.body}</td>
-            </tr>
+              <TableCell>{post.author}</TableCell>
+              <TableCell>{post.body}</TableCell>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
     )}
   </Query>
 );

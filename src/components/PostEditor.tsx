@@ -40,6 +40,7 @@ const PostEditor = ({ post, onClose }: any) => (
                 name="author"
                 className="form-control"
                 component="input"
+                autocomplete="off"
               />
             </div>
             <div>
@@ -49,6 +50,7 @@ const PostEditor = ({ post, onClose }: any) => (
                 name="body"
                 className="form-control"
                 component="input"
+                autocomplete="off"
               />
             </div>
           </div>

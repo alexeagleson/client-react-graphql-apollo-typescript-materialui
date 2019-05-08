@@ -31,3 +31,17 @@ react fragments
 recharts @types/classnames as an example of charting library - chart.js and victory also come highly recommended
 
 https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/page-layout-examples/dashboard
+
+
+## SASS/SCSS
+
+added npm install --save-dev node-sass npm-run-all for this reason
+
+Adding sass wihtout ejecting
+
+https://medium.com/@ariel.salem1989/adding-sass-to-create-react-app-w-o-ejecting-e32ea744bec2
+
+need style linting?
+
+
+## tests
