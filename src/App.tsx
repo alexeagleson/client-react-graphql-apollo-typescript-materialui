@@ -25,7 +25,7 @@ class App extends Component {
               color="secondary"
               onClick={() => this.setState({ viewMode: 2 })}
             >
-              Check out GraphQL!
+              GraphQL!
             </Button>
           </Grid>
           <Grid item xs={8}>

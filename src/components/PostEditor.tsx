@@ -16,8 +16,8 @@ const SUBMIT_POST = gql`
 
 const PostEditor = ({ post, onClose }: any) => (
   <FinalForm
-    onSubmit={async ({ id, author, body }: any) => {
-      const input = { id, author, body };
+    onSubmit={async ({ id, car, manufacturer }: any) => {
+      const input = { id, car, manufacturer };
 
       await client.mutate({
         variables: { input },
@@ -34,20 +34,20 @@ const PostEditor = ({ post, onClose }: any) => (
           <div>{post.id ? 'Edit Post' : 'New Post'}</div>
           <div>
             <div>
-              <label>Author</label>
+              <label>Car</label>
               <Field
                 required
-                name="author"
+                name="car"
                 className="form-control"
                 component="input"
                 autocomplete="off"
               />
             </div>
             <div>
-              <label>Body</label>
+              <label>Manufacturer</label>
               <Field
                 required
-                name="body"
+                name="manufacturer"
                 className="form-control"
                 component="input"
                 autocomplete="off"
