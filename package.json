@@ -3,13 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
     "@types/jest": "24.0.12",
     "@types/node": "12.0.0",
     "@types/react": "16.8.16",
     "@types/react-dom": "16.8.4",
+    "apollo-boost": "^0.3.1",
+    "final-form": "^4.12.0",
+    "graphql": "^14.3.0",
+    "graphql-tag": "^2.10.1",
     "react": "^16.8.6",
+    "react-apollo": "^2.5.5",
     "react-dom": "^16.8.6",
+    "react-final-form": "^4.1.0",
     "react-scripts": "3.0.0",
+    "reactstrap": "^8.0.0",
     "typescript": "3.4.5"
   },
   "scripts": {
@@ -32,5 +40,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/reactstrap": "^8.0.1",
+    "tslint": "^5.16.0"
   }
 }
